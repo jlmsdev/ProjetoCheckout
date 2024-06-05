@@ -3,6 +3,7 @@ import { Home } from './pages/Home';
 import { Carrinho } from './pages/Carrinho';
 import { Layout } from './components/Layout';
 import { Produto } from './pages/produto';
+import { FimCompra } from './pages/FimCompra';
 
 const router = createBrowserRouter([
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/produto/:id',
         element: <Produto />
+      },
+      {
+        path: '/compra-finalizada',
+        element: <FimCompra />
       }
     ]
   }

@@ -1,10 +1,16 @@
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 export function Carrinho() {
     const { cart, AddItemCart, removeItemCart, total } = useContext(CartContext);
+    const navigate = useNavigate();
 
+    function finalizarCompra() {
+        navigate('/compra-finalizada');
+        removeItemCart;
+    }
     return(
         <div className="w-full max-w-7xl mx-auto">
             <h1 className="font-medium text-2xl text-center my-4">Meu Carrinho</h1>
@@ -50,6 +56,12 @@ export function Carrinho() {
                     Total: {total}
                 </p>
                 )}
+
+                <div className='mt-4 flex justify-end'>
+                    <button onClick={finalizarCompra} className='cursor-pointer p-1 px-4 py-2 border border-slate-200 rounded text-white bg-green-800'>
+                        Finalizar Compra
+                    </button>
+                </div>
         </div>  
     );
 }

@@ -9,7 +9,6 @@ export function Carrinho() {
 
     function finalizarCompra() {
         navigate('/compra-finalizada');
-        removeItemCart;
     }
     return(
         <div className="w-full max-w-7xl mx-auto">
@@ -57,11 +56,13 @@ export function Carrinho() {
                 </p>
                 )}
 
+                {cart.length !== 0 && (
                 <div className='mt-4 flex justify-end'>
                     <button onClick={finalizarCompra} className='cursor-pointer p-1 px-4 py-2 border border-slate-200 rounded text-white bg-green-800'>
                         Finalizar Compra
                     </button>
                 </div>
+                )}
         </div>  
     );
 }
